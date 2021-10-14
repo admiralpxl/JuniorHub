@@ -1,6 +1,14 @@
 import React from "react";
+import { InputSearch } from "./components/InputSearch";
 
 function App() {
+  const [value, setValue] = React.useState("");
+  const [userInfo, setUserInfo] = React.useState([]);
+
+  const getInputValue = (event) => {
+    setValue(event.target.value);
+  };
+
   /*const [equipos, setEquipos] = React.useState([]);
 
   const obtenerDatos = async () => {
@@ -15,14 +23,20 @@ function App() {
   }, []);*/
 
   return (
-    <div>
+    <section>
       <h2>
         Hola como estas, ingresa el nombre del usuario de github que quieras
         saber
       </h2>
-      <input type="text" />
-      <button> Buscar </button>
-    </div>
+      <InputSearch input={getInputValue} />
+      <button
+        onClick={() => {
+          console.log(value);
+        }}
+      >
+        Search
+      </button>
+    </section>
   );
 }
 

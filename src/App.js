@@ -52,10 +52,6 @@ function App() {
 
   return (
     <section>
-      <h2>
-        Hola como estas, ingresa el nombre del usuario de github que quieras
-        saber
-      </h2>
       <InputSearch input={getInputValue} />
       <button
         onClick={() => {

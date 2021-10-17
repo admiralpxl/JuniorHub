@@ -1,6 +1,7 @@
 import React from "react";
 import { InputSearch } from "./components/InputSearch";
 import { UserStats } from "./components/Userstats";
+import { RepoCards } from "./components/RepoCards";
 
 function App() {
   const api = "https://api.github.com/users";
@@ -26,6 +27,9 @@ function App() {
       setUserInfo(userData);
       setUserRepo(userRepository);
       console.log(userRepository);
+      /* console.log(
+        Intl.DateTimeFormat("en-US").format(userRepository.updated_at)
+      );*/
       console.log(found);
       console.log("Usuario encontrado");
     } else if (!userData.login) {
@@ -61,13 +65,26 @@ function App() {
         Search
       </button>
       {!!found && (
-        <UserStats
-          image={userInfo.avatar_url}
-          imageName={userInfo.login}
-          name={userInfo.name}
-          user={userInfo.login}
-          bio={userInfo.bio}
-        />
+        <>
+          <UserStats
+            image={userInfo.avatar_url}
+            imageName={userInfo.login}
+            name={userInfo.name}
+            user={userInfo.login}
+            bio={userInfo.bio}
+          />
+          {userRepo.map((item) => (
+            <RepoCards
+              key={item.id}
+              title={item.name}
+              url={item.html_url}
+              bio={item.description ? item.description : "No have description"}
+              language={item.language ? item.language : "Others"}
+              likes={item.stargazers_count}
+              forks={item.forks}
+            />
+          ))}
+        </>
       )}
     </section>
   );

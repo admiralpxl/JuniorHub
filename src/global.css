@@ -32,11 +32,11 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--blue-opacity); /* color of the tracking area */
+  background: var(--gray); /* color of the tracking area */
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--black-opacity); /* color of the scroll thumb */
+  background-color: var(--green); /* color of the scroll thumb */
   border-radius: 10px; /* roundness of the scroll thumb */
   border: 2px solid var(--white); /* creates padding around scroll thumb */
 }
@@ -59,6 +59,13 @@ button {
   background-color: var(--green);
   letter-spacing: 1px;
 }
+a {
+  text-decoration: none;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
 .flex-center {
   display: flex;
   justify-content: center;
@@ -70,4 +77,11 @@ button {
 }
 .padding {
   padding: 8px;
+}
+.glass-user {
+  background: rgba(13, 17, 23, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
 }

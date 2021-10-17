@@ -3,7 +3,7 @@ import React from "react";
 function InputSearch(props) {
   return (
     <article className="input-search">
-      <span className="flex-center fas fa-search"></span>
+      <span className="flex-center fas fa-search span"></span>
       <input
         type="text"
         className="input"
@@ -29,7 +29,7 @@ function InputSearch(props) {
           padding-left: 8px;
           font-size: 1.8rem;
         }
-        span {
+        .span {
           max-width: 30px;
           color: var(--black);
           margin-left: 16px;

@@ -1,0 +1,52 @@
+:root {
+  /*Color*/
+  --white: #ffffff;
+  --black: #0d1117;
+  --gray: #8b949e;
+  --blue: #58a6ff;
+  --grayLight: #c9d1d9;
+  --gray-border: #30363d;
+  /*fonts-weight*/
+  --light: 300;
+  --regular: 400;
+  --medium: 500;
+  --bold: 700;
+  /*fonts*/
+  --sn-serif: "Montserrat", sans-serif;
+  --sl-serif: "PT Serif Caption", serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  color: var(--gray);
+  background-color: var(--black);
+  font-family: var(--sn-serif);
+}
+::-webkit-scrollbar {
+  width: 8px; /* width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: var(--blue-opacity); /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--black-opacity); /* color of the scroll thumb */
+  border-radius: 10px; /* roundness of the scroll thumb */
+  border: 2px solid var(--white); /* creates padding around scroll thumb */
+}
+img {
+  width: 100%;
+  height: 100%;
+}
+.center {
+  justify-content: center;
+  align-items: center;
+}
+.padding {
+  padding: 8px;
+}

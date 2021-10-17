@@ -36,22 +36,6 @@ function App() {
     setFound(1);
   };
 
-  /*
-  <h2>
-        {userInfo.login} + {userInfo.name} + {userInfo.avatar_url} +{" "}
-        {userInfo.bio} + {userInfo.followers} + {userInfo.following} +{" "}
-        {userInfo.company} + {userInfo.location} + {userInfo.email} +{" "}
-        {userInfo.blog} + {userInfo.public_repos} + {userInfo.twitter_username}
-      </h2>
-      <ul>
-        {userRepo.map((item) => (
-          <li key={item.id}>
-            {item.name} + {item.description} +{item.language} + {item.forks} +
-            {item.stargazers_count} + {item.visibility} + {item.default_branch}
-          </li>
-        ))}
-      </ul>*/
-
   return (
     <section className="app-section">
       <Header action={goHome} />

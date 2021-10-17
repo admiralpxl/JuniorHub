@@ -11,7 +11,7 @@ function RepoCards(props) {
       >
         {props.title}
       </a>
-      <h3 className="repo-cards-info-bio">{props.bio}</h3>
+      <p className="repo-cards-info-bio">{props.bio}</p>
       <article className="repo-cards-info-more">
         <div className="repo-cards-info-more__lenguage repo-mini-cards">
           <span className="fas fa-pencil-alt"></span>
@@ -29,9 +29,10 @@ function RepoCards(props) {
       <style jsx>{`
         .repo-cards-info {
           width: 100%;
-          max-width: 400px;
+          text-align: center;
           height: auto;
           padding-bottom: 16px;
+          padding-top: 8px;
           border-bottom: 1px solid var(--gray-border);
         }
         .repo-cards-info-title {
@@ -47,6 +48,7 @@ function RepoCards(props) {
         }
         .repo-cards-info-bio {
           font-size: 1.4rem;
+          width: 100%;
           font-weight: var(--regular);
           line-height: 2.1rem;
           color: var(--black);
@@ -56,7 +58,7 @@ function RepoCards(props) {
           width: 100%;
           height: 25px;
           display: flex;
-          justify-content: start;
+          justify-content: center;
         }
         .repo-mini-cards {
           display: flex;

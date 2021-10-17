@@ -3,7 +3,7 @@ import React from "react";
 function UserStats(props) {
   return (
     <article className="user-stats center padding">
-      <figure>
+      <figure class="figure">
         <img src={props.image} alt={props.imageName} />
       </figure>
       <div className="user-stats-info">
@@ -15,10 +15,9 @@ function UserStats(props) {
         .user-stats {
           display: grid;
           grid-gap: 8px;
-          border-bottom: 1px solid var(--gray-border);
-          max-width: 400px;
+          border-bottom: 1px solid var(--black);
         }
-        figure {
+        .figure {
           width: 250px;
           height: 250px;
           margin: auto;
@@ -45,6 +44,7 @@ function UserStats(props) {
           line-height: 2.2rem;
           font-weight: var(--regular);
           max-width: 400px;
+          text-align: center;
         }
       `}</style>
     </article>

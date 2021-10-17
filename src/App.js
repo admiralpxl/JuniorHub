@@ -2,6 +2,7 @@ import React from "react";
 import { InputSearch } from "./components/InputSearch";
 import { UserStats } from "./components/Userstats";
 import { RepoCards } from "./components/RepoCards";
+import { Header } from "./components/Header";
 
 function App() {
   const api = "https://api.github.com/users";
@@ -55,37 +56,47 @@ function App() {
       </ul>*/
 
   return (
-    <section>
-      <InputSearch input={getInputValue} />
-      <button
-        onClick={() => {
-          fetchAPI(value);
-        }}
-      >
-        Search
-      </button>
-      {!!found && (
-        <>
-          <UserStats
-            image={userInfo.avatar_url}
-            imageName={userInfo.login}
-            name={userInfo.name}
-            user={userInfo.login}
-            bio={userInfo.bio}
-          />
-          {userRepo.map((item) => (
-            <RepoCards
-              key={item.id}
-              title={item.name}
-              url={item.html_url}
-              bio={item.description ? item.description : "No have description"}
-              language={item.language ? item.language : "Others"}
-              likes={item.stargazers_count}
-              forks={item.forks}
+    <section className="app-section">
+      <Header />
+      <article className="app-search">
+        <InputSearch input={getInputValue} />
+        <button
+          onClick={() => {
+            fetchAPI(value);
+          }}
+        >
+          Search
+        </button>
+      </article>
+      <section className="app-info">
+        {!!found && (
+          <>
+            <UserStats
+              image={userInfo.avatar_url}
+              imageName={userInfo.login}
+              name={userInfo.name}
+              user={userInfo.login}
+              bio={userInfo.bio}
             />
-          ))}
-        </>
-      )}
+            {userRepo.map((item) => (
+              <RepoCards
+                key={item.id}
+                title={item.name}
+                url={item.html_url}
+                bio={item.description ? item.description : "No description"}
+                language={item.language ? item.language : "Others"}
+                likes={item.stargazers_count}
+                forks={item.forks}
+              />
+            ))}
+          </>
+        )}
+      </section>
+      <style jsx>{`
+        .app-section {
+          display: grid;
+        }
+      `}</style>
     </section>
   );
 }

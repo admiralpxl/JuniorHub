@@ -63,6 +63,7 @@ button {
 button:hover {
   background-color: var(--blue);
   color: var(--black);
+  cursor: pointer;
 }
 a {
   text-decoration: none;

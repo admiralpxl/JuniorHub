@@ -29,8 +29,10 @@ function RepoCards(props) {
       <style jsx>{`
         .repo-cards-info {
           width: 100%;
+          max-width: 350px;
           text-align: center;
           height: auto;
+          margin-top: 12px;
           padding-bottom: 16px;
           padding-top: 8px;
           border-bottom: 1px solid var(--gray-border);

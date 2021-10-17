@@ -1,15 +1,21 @@
 import React from "react";
 
-function Header() {
+function Header(props) {
   return (
     <header>
-      <figure class="header-logo">
+      <figure onClick={props.action} className="header-logo">
         <img
           src="https://paulasaguz.github.io/PaulaHub/images/git.png"
           alt="header"
         />
       </figure>
-      <h2 className="header-name">JuniorHub</h2>
+      <a
+        target="blank"
+        href="https://github.com/admiralpxl/"
+        className="header-name"
+      >
+        JuniorHub
+      </a>
       <style jsx>{`
         header {
           width: 100%;
@@ -19,14 +25,18 @@ function Header() {
           padding: 8px;
           border-bottom: 1px solid var(--black);
         }
-        .header-log {
-          width: 40px;
-          height: 40px;
+        .header-logo {
+          width: 35px;
+          height: 35px;
+        }
+        .header-logo:hover {
+          cursor: pointer;
         }
         .header-name {
           font-size: 2.4rem;
           font-weight: var(--bold);
           text-decoration: underline;
+          color: var(--black);
         }
       `}</style>
     </header>

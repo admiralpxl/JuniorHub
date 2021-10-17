@@ -23,22 +23,17 @@ function App() {
 
     if (userData.login) {
       setFound(2);
-      console.log(userData);
       let userRepoResponse = await fetch(`${api}/${userData.login}/repos`);
       let userRepository = await userRepoResponse.json();
       setUserInfo(userData);
       setUserRepo(userRepository);
-      console.log(userRepository);
-      /* console.log(
-        Intl.DateTimeFormat("en-US").format(userRepository.updated_at)
-      );*/
-      console.log(found);
-      console.log("Usuario encontrado");
     } else if (!userData.login) {
       setFound(3);
-      console.log("usuario no encontrado");
-      console.log(found);
     }
+  };
+
+  const goHome = () => {
+    setFound(1);
   };
 
   /*
@@ -59,7 +54,7 @@ function App() {
 
   return (
     <section className="app-section">
-      <Header />
+      <Header action={goHome} />
       <article className="app-search">
         <article className="app-search__input">
           <InputSearch input={getInputValue} />
@@ -83,27 +78,32 @@ function App() {
         )}
 
         {found === 2 && (
-          <>
-            <UserStats
-              image={userInfo.avatar_url}
-              imageName={userInfo.login}
-              name={userInfo.name}
-              user={userInfo.login}
-              bio={userInfo.bio}
-            />
-            {userRepo.map((item) => (
-              <RepoCards
-                key={item.id}
-                title={item.name}
-                url={item.html_url}
-                bio={item.description ? item.description : "No description"}
-                language={item.language ? item.language : "Others"}
-                likes={item.stargazers_count}
-                forks={item.forks}
+          <section className="app-info__found">
+            <article className="app-info__user">
+              <UserStats
+                image={userInfo.avatar_url}
+                imageName={userInfo.login}
+                name={userInfo.name}
+                user={userInfo.login}
+                bio={userInfo.bio}
               />
-            ))}
-          </>
+            </article>
+            <section className="app-info__found__repo">
+              {userRepo.map((item) => (
+                <RepoCards
+                  key={item.id}
+                  title={item.name}
+                  url={item.html_url}
+                  bio={item.description ? item.description : "No description"}
+                  language={item.language ? item.language : "Others"}
+                  likes={item.stargazers_count}
+                  forks={item.forks}
+                />
+              ))}
+            </section>
+          </section>
         )}
+
         {found === 3 && (
           <Principal
             title="Sorry that user's name dont exist."
@@ -124,7 +124,32 @@ function App() {
         }
         .app-search__input {
           width: 90%;
-          margin-bottom: 8px;
+          margin-bottom: 12px;
+        }
+        .app-info {
+          padding: 12px;
+        }
+        .app-info__found {
+          display: grid;
+        }
+        .app-info__found__repo {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          padding-bottom: 12px;
+          gap: 8px;
+        }
+        @media (min-width: 700px) {
+          .app-info__found {
+            grid-template-columns: 300px 1fr;
+            grid-template-rows: 300px 1fr;
+            justify-content: center;
+          }
+          .app-info__user {
+            grid-column: 1;
+            grid-row: 1;
+            justify-self: center;
+          }
         }
       `}</style>
     </section>

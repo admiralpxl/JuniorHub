@@ -20,13 +20,16 @@ function InputSearch(props) {
           display: flex;
         }
         .input {
-          min-width: 280px;
+          width: 100%;
           height: 40px;
           outline: none;
           border: none;
           background-color: transparent;
           padding-left: 8px;
           font-size: 1.8rem;
+        }
+        .input-search:hover {
+          border: 2px solid var(--blue);
         }
         .span {
           max-width: 30px;

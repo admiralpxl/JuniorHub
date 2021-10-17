@@ -50,7 +50,7 @@ span {
 button {
   outline: none;
   border: none;
-  width: 100px;
+  width: 150px;
   height: 35px;
   border-radius: 10px;
   font-size: 1.8rem;
@@ -58,6 +58,11 @@ button {
   color: var(--white);
   background-color: var(--green);
   letter-spacing: 1px;
+  transition: all 0.8s ease;
+}
+button:hover {
+  background-color: var(--blue);
+  color: var(--black);
 }
 a {
   text-decoration: none;

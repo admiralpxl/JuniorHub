@@ -13,7 +13,6 @@ function InputSearch(props) {
       <style jsx>{`
         .input-search {
           width: 100%;
-          max-width: 400px;
           border: 1px solid var(--black);
           border-radius: 20px;
           justify-content: start;

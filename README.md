@@ -2,9 +2,9 @@
 
 This web app made in React allows you to see the profile and the repositories of any user registered on Github, the information it's obtained through the GitHub API, show it with React components stylized with CSS in JS with BEM methodology for named classes and using UX Gestal law for improving the UI and the intuitive for the users.
 
-![JuniorHub]()
+![JuniorHub](https://d33wubrfki0l68.cloudfront.net/616cbed5fe4d44e8064753aa/screenshot_2021-10-18-00-26-01-0000.png)
 
-[See the project here]().
+[See the project here](https://juniorhub.netlify.app/).
 
 ## ✨Technology I practices with this project
 
